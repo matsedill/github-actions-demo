@@ -57,7 +57,7 @@ jobs:
     environment: Production
     needs: [Test, Load-Test]
         # "validate": only run this job if the workflow was manual AND Production was selected
-    if: ${{ if: ${{ github.event_name == 'workflow_dispatch' && inputs.target_environment == 'Production' }}
+    if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.target_environment == 'Production' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
