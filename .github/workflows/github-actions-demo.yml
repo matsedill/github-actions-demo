@@ -25,4 +25,4 @@ jobs:
           echo "Ref: ${{ github.ref_name }}"
       - name: List repository files
         run: |
-          ls -la
+          tree .
